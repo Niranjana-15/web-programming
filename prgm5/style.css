@@ -1,0 +1,43 @@
+
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: lightpink;
+    text-align: center;
+}
+
+.contact {
+    background-color: white;
+    width: 300px;
+    padding: 25px;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+
+form {
+    text-align: center;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
