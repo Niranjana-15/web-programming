@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<style>
+body {
+    font-family: Arial;
+    background: purple;
+}
+form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background: lightgrey;
+    border-radius: 10px;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: darkgreen;
+    color: white;
+    border: none;
+}
+</style>
+</head>
+<body>
+<form onsubmit="return validate()">
+<h2 align="center">Registration Form</h2>
+<input type="text" id="name" placeholder="Name">
+<input type="email" id="email" placeholder="Email">
+<span id="emailWarning" style="color:red; font-size:12px;"></span><br>
+<input type="password" id="pass" placeholder="Password">
+<input type="number" id="phone" placeholder="Phone Number">
+<input type="text" id="place" placeholder="Place">
+<input type="date" id="dob">
+<button type="submit">Register</button>
+<p id="msg"></p>
+</form>
+<script>
+      document.getElementById("email").addEventListener("blur", function() {
+    var e = this.value;
+
+    if (e != "" && !/^[a-zA-Z0-9._%+-]{2,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e)) {
+        document.getElementById("emailWarning").innerHTML = "⚠ Please enter a valid email address";
+    } else {
+        document.getElementById("emailWarning").innerHTML = "";
+    }
+});
+function validate() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("pass").value;
+    let phone = document.getElementById("phone").value;
+    let place = document.getElementById("place").value;
+    let dob = document.getElementById("dob").value;
+if (!name || !email || pass.length < 6 ||
+!/^[0-9]{10}$/.test(phone) || !place || !dob) {
+alert("Please enter valid details!");
+return false;
+ }
+if (new Date(dob) >= new Date()) {
+alert("Enter a valid date of birth!");
+return false;
+}
+ alert("Registration Successful!");
+return false;
+}
+</script>
+</body>
+</html>
+
